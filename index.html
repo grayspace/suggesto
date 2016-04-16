@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get Suggestions</title>
+  <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="style.css" />
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <h1>SUGGESTO</h1>
+    <p>Real-time suggestions from Google, Bing, and Yahoo!</p>
+    <br/>
+    <input id="search" name="search" type="text" placeholder="Start typing..." />
+    <div class="row-fluid suggestions">
+      <div class="col-sm-12 limit">
+        Limit to&nbsp;
+        <label class="radio-inline">
+          <input type="radio" name="gimme" value="3">3</label>
+        <label class="radio-inline active">
+          <input type="radio" name="gimme" value="5" checked="">5</label>
+        <label class="radio-inline">
+          <input type="radio" name="gimme" value="10">10</label>
+        <!-- &nbsp;suggestions -->
+      </div>
+      <div class="col-sm-4">
+        <p class="search-engine-label" style="display: none;">Google suggests:</p>
+        <ul id="goog-suggestions" class="sugg-ul"></ul>
+      </div>
+      <div class="col-sm-4">
+        <p class="search-engine-label" style="display: none;">Bing suggests:</p>
+        <ul id="bing-suggestions" class="sugg-ul"></ul>
+      </div>
+      <div class="col-sm-4">
+        <p class="search-engine-label" style="display: none;">Yahoo suggests:</p>
+        <ul id="yahoo-suggestions" class="sugg-ul"></ul>
+      </div>
+    </div> 
+  </div>
+  <p id="copyright">&copy;<span id="currentYear"></span> SUGGESTO.US</p>
+  
+  <script src="http://codepen.io/assets/libs/fullpage/jquery_and_jqueryui.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+
+</html>
