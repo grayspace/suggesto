@@ -2,14 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Suggesto - Instant suggestions from Google, Yahoo! and Bing.</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Get Suggestions</title>
   <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
-
-  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="style.css" />
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,18 +21,25 @@
   <div class="container">
     <h1>SUGGESTO</h1>
     <p>Real-time suggestions from Google, Bing, and Yahoo!</p>
-    <br/>
+    <br />
     <input id="search" name="search" type="text" placeholder="Start typing..." />
     <div class="row-fluid suggestions">
       <div class="col-sm-12 limit">
-        Limit to&nbsp;
+        Limit to
         <label class="radio-inline">
-          <input type="radio" name="gimme" value="3">3</label>
+          <input type="radio" name="gimme" value="3" /> 3
+        </label>
         <label class="radio-inline active">
-          <input type="radio" name="gimme" value="5" checked="">5</label>
+          <input type="radio" name="gimme" value="5" checked="" /> 5
+        </label>
         <label class="radio-inline">
-          <input type="radio" name="gimme" value="10">10</label>
-        <!-- &nbsp;suggestions -->
+          <input type="radio" name="gimme" value="10" /> 10
+        </label>
+        <div id="legend" style="display: none;">
+          <span class="highlight-match">Orange</span> = exact match
+          <span class="highlight-common" style="padding-left: 5px;">Green</span> = common match
+          <span class="highlight-unique" style="padding-left: 5px;">Blue</span> = unique match
+        </div>
       </div>
       <div class="col-sm-4">
         <p class="search-engine-label" style="display: none;">Google suggests:</p>
@@ -48,16 +53,13 @@
         <p class="search-engine-label" style="display: none;">Yahoo suggests:</p>
         <ul id="yahoo-suggestions" class="sugg-ul"></ul>
       </div>
-    </div> 
-  </div>
-  <div class="copyright-container">
-  &copy;<span id="currentYear"></span>&nbsp;suggesto.us
-  </div>
-  
-  <script data-require="jquery@2.2.4" data-semver="2.2.4" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-  <script src="script.js"></script>
-  
+    </div>
+
+    <p id="copyright">© <span id="currentYear"></span> SUGGESTO.US
+    </p>
+    <script data-require="jquery@2.2.4" data-semver="2.2.4" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
