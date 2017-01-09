@@ -41,6 +41,7 @@ body {
 .suggestions {
   padding-top: 0;
   margin: 0 auto;
+  padding-bottom: 10px;
 }
 
 .suggestions div ul {
@@ -63,18 +64,34 @@ body {
   margin-top: 2px;
 }
 
-.limit .radio-inline, .checkbox-inline {
+.limit .radio-inline,
+.checkbox-inline {
   margin-left: 5px;
   margin-right: 8px;
 }
 
-.copyright-container {
-  position: fixed;
-  width: 100%;
-  bottom: 0px;
-  text-align: center;
+#copyright {
   font-size: 12px;
-  background-color: #F1C7EA;
-  color: #333;
-  padding: 5px 0;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+}
+
+.highlight-match {
+  color: #FBBC05 !important;
+}
+
+.highlight-common {
+  color: #34A853 !important;
+}
+
+.highlight-unique,
+a,
+a:hover {
+  color: #4286F4;
+}
+
+#legend {
+  margin-top: 5px;
 }
