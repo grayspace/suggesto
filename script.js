@@ -8,11 +8,21 @@ $("#search").autocomplete({
     var limit = $("input:radio[name='gimme']:checked").val();
     getSuggestions(request, response, limit);
     $('.search-engine-label').show();
+    $('#legend').show();
   },
   // Hide number of results message
   messages: {
     noResults: '',
     results: function() {}
+  }
+});
+
+var typingTimer;
+var doneTypingInterval = 1000;
+$('#search').keyup(function() {
+  clearTimeout(typingTimer);
+  if ($('#search').val()) {
+    typingTimer = setTimeout(doneTyping($('#search').val()), doneTypingInterval);
   }
 });
 
@@ -76,4 +86,27 @@ function getSuggestions(request, response, limit) {
 function getLink(url, term, label) {
   formattedTerm = term.split(' ').join('+');
   return "<a target=\"_blank\" href=\"" + url + formattedTerm + "\" title=\"View results on " + label + "\"\">" + term + "</a>";
+}
+
+// Do stuff when typing is done
+function doneTyping(searchTxt) {
+  // Highlight exact matches
+  var $matches = $('.sugg-ul li').find('*').filter(function() {
+    return $(this).text() === searchTxt;
+  });
+  $matches.addClass('highlight-match');
+
+  // Hightlight common suggestions
+  unique = {};
+  $('.sugg-ul li').each(function() {
+    var thisVal = $(this).text();
+    if (!(thisVal in unique)) {
+      unique[thisVal] = "";
+    } else {
+      $('.sugg-ul li').find('*').filter(function() {
+        return $.text([this]) === thisVal;
+      }).addClass('highlight-common');
+    }
+  });
+
 }
