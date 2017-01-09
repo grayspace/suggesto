@@ -78,20 +78,19 @@ body {
   width: 100%;
 }
 
-.highlight-match {
-  color: #FBBC05 !important;
+.highlight-exact, .highlight-exact:hover {
+  color: #FFA500;
 }
 
-.highlight-common {
-  color: #34A853 !important;
+.highlight-common, .highlight-common:hover {
+  color: #34A853;
 }
 
-.highlight-unique,
-a,
-a:hover {
+.highlight-unique, a, a:hover {
   color: #4286F4;
 }
 
 #legend {
-  margin-top: 5px;
+  margin-top: 10px;
 }
+
