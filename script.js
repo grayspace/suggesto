@@ -90,12 +90,6 @@ function getLink(url, term, label) {
 
 // Do stuff when typing is done
 function doneTyping(searchTxt) {
-  // Highlight exact matches
-  var $matches = $('.sugg-ul li').find('*').filter(function() {
-    return $(this).text() === searchTxt;
-  });
-  $matches.addClass('highlight-match');
-
   // Hightlight common suggestions
   unique = {};
   $('.sugg-ul li').each(function() {
@@ -109,4 +103,9 @@ function doneTyping(searchTxt) {
     }
   });
 
+  // Highlight exact matches
+  var $matches = $('.sugg-ul li').find('*').filter(function() {
+    return $(this).text() === searchTxt;
+  });
+  $matches.addClass('highlight-exact');
 }
