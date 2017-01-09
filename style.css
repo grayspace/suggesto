@@ -76,6 +76,7 @@ body {
   position: fixed;
   bottom: 10px;
   width: 100%;
+  left: 15px;
 }
 
 .highlight-exact, .highlight-exact:hover {
